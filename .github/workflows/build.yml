@@ -508,6 +508,8 @@ jobs:
           KBUILD_BUILD_TIMESTAMP: ${{ env.KBUILD_BUILD_TIMESTAMP }}
           KBUILD_BUILD_USER: ${{ (inputs.version == 'android15-6.6' || inputs.version == 'android16-6.12' || inputs.version == 'android17-6.18') && 'kleaf' || 'build-user' }}
           KBUILD_BUILD_HOST: build-host
+          KSU_NEXT_MANAGER_SIZE: "0x35F"
+          KSU_NEXT_MANAGER_HASH: "1e08a903aef9c3a721510b64ec764d01d3d094eb954161b62544ea8f187b5953"
         uses: ./.github/actions/build-kernel
         with:
           version: ${{ inputs.version }}
